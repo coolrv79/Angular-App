@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+</style>
+</head>
+<body>
+
+<section class="row" >
+<article class="col-3 col-s-3" style="font-size: 30px;font-weight: bold;" >
+
+</article>
+<article class="col-6">
+
+</article>
+<article class="col-3">
+
+</article>
+</section>
+
+
+<section class="row">
+<section class="col-5 col-s-3">
+<h1>Welcome to shape calculator</h1>
+<div style="font-weight:bold;font-size:15px;">Shape Calculator is an interactive web application. To the right you will ﬁnd the 3 step application. Follow the instructions in each step. Clicking cancel will take you back to step 1. Enjoy!</div><br>
+<div style="font-size:14px;">
+A small river named Duden ﬂows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences ﬂy into your mouth.
+
+
+<br><br>
+Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas.</div>
+</section>
+<section class="col-5 col-s-9"  style="border:solid gray 1px;background-color:#ffffff;border-radius:.2cm;">
+<br>
+<div style="text-align: center;font-weight: bold;">
+Step 2:Insert your values
+</div><br>
+<div>
+You have selected <strong>{{this.param.value}}</strong> <br>Please input the required variables
+<br><br>
+<div *ngIf="this.param.value=='Rectangle'">
+<span style="font-weight:bold;">Height</span>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="this.height">
+<br><br>
+<span style="font-weight:bold;">Width</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="this.width">
+</div>
+
+
+<div *ngIf="this.param.value=='Square'">
+<span style="font-weight:bold;">Width</span>&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="this.side">
+</div>
+
+<div *ngIf="this.param.value=='Circle'">
+<span style="font-weight:bold;">Diameter</span>&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="this.diam">
+</div>
+
+<div *ngIf="this.param.value=='Ellipse'">
+<span style="font-weight:bold;">Width</span>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="this.Ewidth"><br><br>
+<span style="font-weight:bold;">Heigth</span>&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="this.Eheight">
+
+</div>
+<div *ngIf="this.errmsgflag==1" style="color:red;font-weight:bold;">Please enter the value</div>
+<br><br><br>
+<button style="height: 33px;width: 3cm;font-weight: bold;font-size: 16px;color: gray;" (click)="Thirdpage(this.param.value)"> Go to step 3</button>&nbsp;&nbsp;&nbsp;or<button style="background: none;border: 0;font-size: 14px;" (click)=backtofirst()>Cancel</button>   
+
+</div>
+
+ </section>
+
+<section class="col-2 col-s-12">
+</section>
+</section>
+
+
+</body>
+</html>
